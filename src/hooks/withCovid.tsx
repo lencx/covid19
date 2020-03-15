@@ -6,7 +6,9 @@
 import React from 'react';
 import useCovid from '~/hooks/useCovid';
 
-const withCovid = () => (WrappedComponent: React.FC) => (props: any) => {
+const withCovid = () => (WrappedComponent: React.ComponentType<any>) => (
+  props: any
+) => {
   const { payload, status } = useCovid(props.serve);
   return (
     <div>
@@ -25,25 +27,3 @@ const withCovid = () => (WrappedComponent: React.FC) => (props: any) => {
 };
 
 export default withCovid;
-
-// interface ServeCenterProps {
-//   server: string;
-// }
-
-// export default function ServeCenter({ server }: ServeCenterProps) {
-//   const { payload, status } = useCovid(server);
-
-//   return (
-//     <div>
-//       {status === 'loading' && <div>loading...</div>}
-//       {status === 'loaded' && (
-//         <div>
-//           <pre>{JSON.stringify(payload, null, 2)}</pre>
-//         </div>
-//       )}
-//       {status === 'error' && (
-//         <div>Error, the backend moved to the dark side.</div>
-//       )}
-//     </div>
-//   );
-// }

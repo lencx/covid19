@@ -4,19 +4,19 @@
  */
 
 import React from 'react';
+import withCovid from '~/hooks/withCovid';
 
 interface CountrySelectorProps {
-  dataSource: any;
+  payload: any;
 }
 
-export default function CountrySelector({ dataSource }: CountrySelectorProps) {
+function CountrySelector({ payload }: CountrySelectorProps) {
   return (
     <div>
       <select>
-        {Object.entries(dataSource.countries).map(([country, code]: any) => {
-          console.log(`[19] CountrySelector.tsx: `, code);
+        {Object.entries(payload.countries).map(([country, code]: any) => {
           return (
-            <option key={country} value={dataSource.iso3[code]}>
+            <option key={country} value={payload.iso3[code]}>
               {country}
             </option>
           );
@@ -25,3 +25,5 @@ export default function CountrySelector({ dataSource }: CountrySelectorProps) {
     </div>
   );
 }
+
+export default withCovid()(CountrySelector);

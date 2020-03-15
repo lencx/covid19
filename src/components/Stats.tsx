@@ -6,10 +6,14 @@
 import React from 'react';
 import withCovid from '~/hooks/withCovid';
 
-function Stats(props: any) {
+interface StatsProps {
+  payload: any;
+}
+
+function Stats({ payload }: StatsProps) {
   return (
     <div>
-      <pre>{JSON.stringify(props.payload, null, 2)}</pre>
+      <pre>{JSON.stringify(payload, null, 2)}</pre>
     </div>
   );
 }

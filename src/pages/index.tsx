@@ -5,12 +5,14 @@
 
 import React from 'react';
 import Stats from '~/components/Stats';
-import { COVID19 } from '~/api';
+import CountrySelector from '~/components/CountrySelector';
+import api, { COVID19 } from '~/api';
 
 export default function IndexPage() {
   return (
     <div>
       <Stats serve={COVID19} />
+      <CountrySelector serve={api.countries} />
     </div>
   );
 }

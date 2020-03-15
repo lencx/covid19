@@ -1,0 +1,11 @@
+{
+  "name": "COVID19",
+  "version": 2,
+  "alias": "covid19.nofwl.com",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}
