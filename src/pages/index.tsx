@@ -4,15 +4,17 @@
  */
 
 import React from 'react';
+import Layout from '~/layouts';
 import Stats from '~/components/Stats';
 import CountrySelector from '~/components/CountrySelector';
 import api, { COVID19 } from '~/api';
 
 export default function IndexPage() {
   return (
-    <div>
+    <Layout>
       <Stats serve={COVID19} />
+      <br />
       <CountrySelector serve={api.countries} />
-    </div>
+    </Layout>
   );
 }

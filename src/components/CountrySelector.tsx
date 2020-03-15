@@ -13,6 +13,7 @@ interface CountrySelectorProps {
 function CountrySelector({ payload }: CountrySelectorProps) {
   return (
     <div>
+      <h3>Countries</h3>
       <select>
         {Object.entries(payload.countries).map(([country, code]: any) => {
           return (

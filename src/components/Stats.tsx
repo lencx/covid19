@@ -13,6 +13,7 @@ interface StatsProps {
 function Stats({ payload }: StatsProps) {
   return (
     <div>
+      <h3>Stats</h3>
       <pre>{JSON.stringify(payload, null, 2)}</pre>
     </div>
   );
