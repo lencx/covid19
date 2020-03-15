@@ -4,11 +4,11 @@ import _set from 'lodash/set';
 import _get from 'lodash/get';
 
 /**
- * Store
+ * useStore
  * @author lencx
  * @param {object} - initial value
  * @example
- * const { state, set, get } = Store({ visible: true, form: {name: 'lencx', age: 27 }});
+ * const { state, set, get } = useStore({ visible: true, form: {name: 'lencx', age: 27 }});
  * set('form.name', 'Tom');
  * set('visible', false);
  * set({
@@ -17,18 +17,18 @@ import _get from 'lodash/get';
  * });
  * get('form.name');
  */
-export default function Store(initState = {}) {
-  const [state, setState] = useReducer((o, n) => ({ ...o, ...n }), {
+export default function useStore(initState = {}) {
+  const [state, setState] = useReducer((o: any, n: any) => ({ ...o, ...n }), {
     ...initState,
   });
 
-  const set = (prefix, data) => {
-    let _data = _cloneDeep(state);
+  const set = (prefix: string | { [key: string]: any }, data?: any) => {
+    const _data = _cloneDeep(state);
     if (typeof prefix === 'string') {
       _set(_data, prefix, data);
     }
     if (typeof prefix === 'object') {
-      for (let key in prefix) {
+      for (const key in prefix) {
         _set(_data, key, prefix[key]);
       }
     }
@@ -36,7 +36,7 @@ export default function Store(initState = {}) {
     return _data;
   };
 
-  const get = prefix => _get(state, prefix);
+  const get = (prefix: string) => _get(state, prefix);
 
   return { state, set, get };
 }

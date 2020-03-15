@@ -10,4 +10,5 @@ export default {
   confirmed: `${COVID19}/confirmed`,
   recovered: `${COVID19}/recovered`,
   deaths: `${COVID19}/deaths`,
+  countries: `${COVID19}/countries`,
 };

@@ -1,19 +1,33 @@
-import { useEffect, useState } from 'react';
-
 /**
  * useCovid
- * @author lencx
- * @param {string} - api url
+ * @author: lencx
+ * @create_at: Mar 15, 2020
  */
-export default function useCovid(url: string) {
-  const [state, setState] = useState(null);
+
+import { useEffect } from 'react';
+import useStore from '~/hooks/useStore';
+
+export type ServiceStatus = 'loading' | 'loaded' | 'error';
+
+export interface Service<T> {
+  payload: T;
+  status: ServiceStatus;
+  error?: Error;
+}
+
+export default function useCovid<T>(url: string): Service<T> {
+  const { state, set } = useStore({
+    status: 'loading',
+    payload: null,
+  });
+
   useEffect(() => {
-    const fetchData = async () => {
-      if (!url) return null;
-      const data = await fetch(url).then(res => res.json());
-      setState(data);
-    };
-    fetchData();
+    if (url) {
+      fetch(url)
+        .then(res => res.json())
+        .then(res => set({ payload: res, status: 'loaded' }))
+        .catch(error => set({ status: 'error', error }));
+    }
   }, []);
 
   return state;

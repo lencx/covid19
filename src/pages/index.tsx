@@ -4,14 +4,13 @@
  */
 
 import React from 'react';
-import useCovid from '~/hooks/useCovid';
+import Stats from '~/components/Stats';
 import { COVID19 } from '~/api';
 
 export default function IndexPage() {
-  const data = useCovid(COVID19);
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <Stats serve={COVID19} />
     </div>
   );
 }
