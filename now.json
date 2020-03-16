@@ -1,4 +1,5 @@
 {
-  "name": "COVID19",
-  "version": 2
+  "name": "COVID-19",
+  "version": 2,
+  "alias": "covid19.nofwl.com"
 }

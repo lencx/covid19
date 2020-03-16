@@ -1,6 +1,8 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import Head from 'next/head';
 
+import Header from './header';
 import Footer from './footer';
 import { Reset } from './reset';
 
@@ -10,44 +12,41 @@ export interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <LayoutContainer>
+    <>
       <Reset />
       <GlobalStyle />
+      <Head>
+        <link rel="icon" type="image/png" sizes="64x64" href="/covid19.png" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+        />
+        <title>COVID-19</title>
+      </Head>
+      <Header />
       <main>{children}</main>
       <Footer />
-    </LayoutContainer>
+    </>
   );
 }
 
-const LayoutContainer = styled.div``;
-
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-  }
-
   body,
-  #__next,
-  #__next > div {
+  #__next {
     height: 100vh;
     margin: 0;
+    font-family: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   }
 
-  #__next > div > main {
-    height: calc(100vh - 60px);
+  #__next > main {
+    height: calc(100vh - 130px);
+    padding: 20px var(--layout-side-pad);
   }
 
-  #__next > div > footer {
+  #__next > footer {
     text-align: center;
+    padding: 0 var(--layout-side-pad);
   }
 `;

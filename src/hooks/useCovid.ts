@@ -25,10 +25,16 @@ export default function useCovid<T>(url: string): Service<T> {
     if (url) {
       fetch(url)
         .then(res => res.json())
-        .then(res => set({ payload: res, status: 'loaded' }))
+        .then(res => {
+          if (res.error) {
+            set({ status: 'error' });
+          } else {
+            set({ payload: res, status: 'loaded' });
+          }
+        })
         .catch(error => set({ status: 'error', error }));
     }
-  }, []);
+  }, [url]);
 
   return state;
 }

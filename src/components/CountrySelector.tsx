@@ -3,18 +3,30 @@
  * @create_at: Mar 16, 2020
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import withCovid from '~/hooks/withCovid';
 
 interface CountrySelectorProps {
   payload: any;
+  defaultValue?: string;
+  onChange?: (country: string) => void;
 }
 
-function CountrySelector({ payload }: CountrySelectorProps) {
+function CountrySelector({
+  defaultValue,
+  payload,
+  onChange,
+}: CountrySelectorProps) {
+  const [selectedCountry, setSelectedCountry] = useState(defaultValue);
+  const handleChange = (e: any) => {
+    const val = e.target.value;
+    setSelectedCountry(val);
+    onChange && onChange(val);
+  };
   return (
     <div>
       <h3>Countries</h3>
-      <select>
+      <select value={selectedCountry} onChange={handleChange}>
         {Object.entries(payload.countries).map(([country, code]: any) => {
           return (
             <option key={country} value={payload.iso3[code]}>
