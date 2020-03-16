@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import withCovid from '~/hooks/withCovid';
 
 interface CountrySelectorProps {
@@ -26,7 +27,7 @@ function CountrySelector({
   return (
     <div>
       <h3>Countries</h3>
-      <select value={selectedCountry} onChange={handleChange}>
+      <Select value={selectedCountry} onChange={handleChange}>
         {Object.entries(payload.countries).map(([country, code]: any) => {
           return (
             <option key={country} value={payload.iso3[code]}>
@@ -34,9 +35,13 @@ function CountrySelector({
             </option>
           );
         })}
-      </select>
+      </Select>
     </div>
   );
 }
+
+const Select = styled.select`
+  margin-bottom: 10px;
+`;
 
 export default withCovid()(CountrySelector);

@@ -49,4 +49,7 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     padding: 0 var(--layout-side-pad);
   }
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+  }
 `;

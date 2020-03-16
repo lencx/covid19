@@ -54,9 +54,10 @@ function Stats({ payload }: StatsProps) {
           dataSource={payload.deaths}
         />
       </StatsIBox>
-      <time>
-        lastUpdate: {dayjs(payload.lastUpdate).format('YYYY-MM-DD HH:mm:ss')}
-      </time>
+      <TimeBox>
+        <span>Last Updated:</span>
+        <time>{dayjs(payload.lastUpdate).format('YYYY-MM-DD HH:mm:ss')}</time>
+      </TimeBox>
     </div>
   );
 }
@@ -72,7 +73,6 @@ const StatsIBox = styled.div`
 const StatsItemBox = styled.div`
   flex: 1;
   margin: 10px;
-  padding: 20px;
   border-radius: 10px;
   text-align: center;
   box-shadow: inset 0 0 3px ${props => props.color};
@@ -82,14 +82,42 @@ const StatsItemBox = styled.div`
   :last-child {
     margin-right: 0;
   }
+  @media (min-width: 768px) {
+    padding: 20px;
+    h3 {
+      font-size: 24px;
+    }
+    em {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 10px;
+    h3 {
+      font-size: 14px;
+    }
+    em {
+      font-size: 12px;
+    }
+  }
   h3 {
     text-transform: capitalize;
     color: ${props => props.color};
     margin-bottom: 10px;
-    font-size: 24px;
   }
   em {
     font-style: normal;
     font-weight: bold;
+  }
+`;
+
+const TimeBox = styled.div`
+  font-size: 12px;
+  span {
+    color: var(--gray);
+    margin-right: 10px;
+  }
+  time {
+    color: var(--cyan);
   }
 `;

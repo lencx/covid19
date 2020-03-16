@@ -21,6 +21,8 @@ export default function useCovid<T>(url: string): Service<T> {
     payload: null,
   });
 
+  // const fetchData =
+
   useEffect(() => {
     if (url) {
       fetch(url)
