@@ -3,12 +3,12 @@
   "short_name": "COVID19",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/icon/covid19-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/icon/covid1-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

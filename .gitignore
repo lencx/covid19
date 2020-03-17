@@ -10,3 +10,7 @@
 
 # build or cache
 .next
+
+# pwa
+**/public/workbox-*
+**/public/sw.js*

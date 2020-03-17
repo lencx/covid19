@@ -5,11 +5,9 @@
 
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import Head from 'next/head';
 
 import Header from './header';
 import Footer from './footer';
-import { Reset } from './reset';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -18,19 +16,7 @@ export interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Reset />
       <GlobalStyle />
-      <Head>
-        <link rel="icon" type="image/png" sizes="64x64" href="/covid19.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0d386c" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
-        />
-        <title>COVID-19</title>
-      </Head>
       <Header />
       <main>{children}</main>
       <Footer />

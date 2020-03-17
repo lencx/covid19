@@ -9,7 +9,7 @@ import styled from 'styled-components';
 export default function Header() {
   return (
     <HeaderContiner>
-      <img src="/covid19.png" />
+      <img src="/icon/covid19.png" />
       <span>COVID-19</span>
     </HeaderContiner>
   );
