@@ -6,8 +6,8 @@
 import React from 'react';
 // import Link from 'next/link';
 import styled from 'styled-components';
-import dayjs from 'dayjs';
 import withCovid from '~/hooks/withCovid';
+import { formatDate } from '~/utils/tools';
 
 export interface StatsProps {
   payload: any;
@@ -56,7 +56,7 @@ function Stats({ payload }: StatsProps) {
       </StatsIBox>
       <TimeBox>
         <span>Last Updated:</span>
-        <time>{dayjs(payload.lastUpdate).format('YYYY-MM-DD HH:mm:ss')}</time>
+        <time>{formatDate(payload.lastUpdate)}</time>
       </TimeBox>
     </div>
   );

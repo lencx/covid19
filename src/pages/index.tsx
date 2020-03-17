@@ -17,7 +17,7 @@ export default function IndexPage() {
   });
   return (
     <Layout>
-      <StatsBox className="aa">
+      <StatsBox>
         <h2>Global</h2>
         <Stats serve={COVID19} />
       </StatsBox>

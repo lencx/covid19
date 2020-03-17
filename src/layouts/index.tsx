@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Mar 16, 2020
+ */
+
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Head from 'next/head';

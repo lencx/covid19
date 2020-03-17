@@ -1,3 +1,8 @@
+/**
+ * @author: lencx
+ * @create_at: Mar 16, 2020
+ */
+
 import { css, createGlobalStyle } from 'styled-components';
 
 // prettier-ignore

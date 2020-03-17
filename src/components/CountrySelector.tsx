@@ -27,6 +27,7 @@ function CountrySelector({
   return (
     <div>
       <h3>Countries</h3>
+      {/* <pre>{JSON.stringify(payload.countries, null, 2)}</pre> */}
       <Select value={selectedCountry} onChange={handleChange}>
         {Object.entries(payload.countries).map(([country, code]: any) => {
           return (
