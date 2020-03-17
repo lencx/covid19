@@ -22,6 +22,8 @@ export default function Layout({ children }: LayoutProps) {
       <GlobalStyle />
       <Head>
         <link rel="icon" type="image/png" sizes="64x64" href="/covid19.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0d386c" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
