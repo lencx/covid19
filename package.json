@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@antv/l7-react": "^2.1.2",
+    "bulma": "^0.8.0",
     "dayjs": "^1.8.23",
     "next": "^9.3.0",
     "next-pwa": "^2.3.1",

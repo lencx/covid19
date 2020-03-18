@@ -29,8 +29,14 @@ const GlobalStyle = createGlobalStyle`
   #__next {
     height: 100vh;
     margin: 0;
-    font-family: -apple-system, "Open Sans", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    background: var(--dark);
+    color: var(--silver);
+    font-family: BlinkMacSystemFont, -apple-system, "Open Sans", "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+
+  a {
+    color: var(--pink);
   }
 
   #__next > main {

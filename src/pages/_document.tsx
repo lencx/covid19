@@ -29,6 +29,11 @@ export default class extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
           />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="144x144"
+            href="/icon/144.png"
+          />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link

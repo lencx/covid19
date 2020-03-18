@@ -20,7 +20,7 @@ const HeaderContiner = styled.header`
   height: 60px;
   align-items: center;
   padding: 0 var(--layout-side-pad);
-  box-shadow: var(--shadow-floating);
+  border-bottom: solid 1px var(--light);
   img {
     width: 48px;
     height: 48px;
@@ -28,6 +28,6 @@ const HeaderContiner = styled.header`
   }
   span {
     font-weight: bold;
-    color: var(--dark);
+    color: #fff;
   }
 `;
