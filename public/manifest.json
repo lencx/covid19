@@ -1,21 +1,14 @@
 {
   "name": "2019 Novel Coronavirus",
   "short_name": "COVID19",
-  "icons": [
-    {
-      "src": "/icon/covid19-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/icon/covid1-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
   "background_color": "#17a2b8",
   "description": "2019 Novel Coronavirus",
   "display": "standalone",
   "start_url": "/",
-  "theme_color": "#0d386c"
+  "theme_color": "#0d386c",
+  "icons": [
+    { "src": "/icon/128.png", "type": "image/png", "sizes": "128x128" },
+    { "src": "/icon/144.png", "type": "image/png", "sizes": "144x144" },
+    { "src": "/icon/192.png", "type": "image/png",  "sizes": "192x192" }
+  ]
 }

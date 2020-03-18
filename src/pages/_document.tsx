@@ -29,21 +29,11 @@ export default class extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
           />
-
-          <link
-            rel="apple-touch-icon"
-            sizes="192x192"
-            href="/icon/covid19-192.png"
-          />
           <link rel="manifest" href="/manifest.json" />
-          <link
-            rel="shortcut icon"
-            type="image/png"
-            sizes="64x64"
-            href="/icon/covid19.png"
-          />
-          <title>COVID-19</title>
+          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="stylesheet" href="/reset.css" />
+          <title>COVID-19</title>
           <style>{`
             html, body, #__next {
               height: 100%;
