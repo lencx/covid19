@@ -37,6 +37,10 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: var(--pink);
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--green);
+    }
   }
 
   #__next > main {

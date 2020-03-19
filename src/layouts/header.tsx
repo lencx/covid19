@@ -20,7 +20,7 @@ const HeaderContiner = styled.header`
   height: 60px;
   align-items: center;
   padding: 0 var(--layout-side-pad);
-  border-bottom: solid 1px var(--light);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
   img {
     width: 48px;
     height: 48px;

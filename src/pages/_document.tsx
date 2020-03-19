@@ -35,13 +35,7 @@ export default class extends Document {
             href="/icon/144.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/icon/favicon-32x32.png"
-          />
+          <link rel="shortcut icon" type="image/png" href="/icon/192.png" />
           <link rel="stylesheet" href="/base.css" />
           <title>COVID-19</title>
           <style>{`

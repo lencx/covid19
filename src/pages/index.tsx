@@ -36,7 +36,7 @@ export default function IndexPage() {
 
 const StatsBox = styled.div`
   margin-bottom: 20px;
-  border: 1px solid var(--gray);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
 `;
